@@ -1,0 +1,300 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+/* a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+} */
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+body {
+  
+ }
+
+header img {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+
+
+
+#jumbotrona1 a{
+  color: #000;
+  background-color: #000;
+}
+
+#header1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+    height: auto;  
+}
+
+.topHeader{
+  background-color:red !important;
+  border-color:red !important;
+}
+
+ #section1 {
+ background-image: url(assets/fuji.png);
+ background-size: cover;
+ width: 100%;
+ height: 650px;
+} 
+
+#text1 {
+  margin-top: 80px;
+  color: white;
+  margin-bottom: 70px;
+  font-size:3em;
+  line-height:0.95em;
+  font-weight:bold;
+  color: #FFF;
+  text-shadow: 0 0 0.2em rgba(0,0,0,1);
+}
+
+/* #a1 {
+  display: block;
+  padding: 10px;
+  margin: 30px 160px;
+  
+}
+#a2 {
+  display: block;
+  padding: 10px;
+  margin: 10px 160px;
+} */
+
+
+
+#section2 {
+ height: 350px;
+}
+
+#section2 #sample {
+  margin-top: 200px;
+  margin-right: 30px;
+  font-size:3em;
+  line-height:0.95em;
+  font-weight:bold;
+  color: #FFF;
+  text-shadow: 0 0 0.2em rgba(0,0,0,1);
+}
+
+button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+ }
+ 
+ button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ button:hover {
+  color: #e8e8e8;
+ }
+ 
+ button:hover::before {
+  width: 100%;
+ }
+
+#section3 {
+  height: 800px;
+}
+
+#h12 {
+  margin-top: 80px;
+  color: white;
+  margin-bottom: 70px;
+  font-size:3em;
+  line-height:0.95em;
+  font-weight:bold;
+  color: #FFF;
+  text-shadow: 0 0 0.2em rgba(0,0,0,1);
+}
+
+#section3 {
+  text-align: center;
+}
+
+#a3 {
+  padding: 0px 30px;
+  margin-top: -130px;
+  margin-right: 480px;
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  background-color: rgb(114 137 218);
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  height: 350px;
+  background-color: #cccccc;
+}
+
+#footer-left {
+  margin-left: 150px;
+}
+
+#footerul {
+  margin-top: 50px;
+}
+
+#footerul li {
+    margin-bottom: 20px;
+}
+
+#footer li a {
+    color: black;
+    opacity: 1;
+    color: black;
+}
+
+#footer-right {
+    margin-top: 90px;
+    margin-right: 60px;
+}
+
+#footer-right img {
+    width: 80px;
+    height: 80px;
+}
+
+li {
+  list-style: none;
+}
+
+#my-map {
+  margin-top: -600px;
+  margin-left: 200px;
+  margin-bottom: 200px;
+}
