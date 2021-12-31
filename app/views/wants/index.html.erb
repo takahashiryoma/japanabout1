@@ -1,0 +1,64 @@
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" id="header5">
+    <img src="assets/logo.png" alt="">
+    <p class="h5 my-0 me-md-auto fw-normal">Let's know about Japan</p>
+
+    <div class="jumbotron"> 
+    <nav class="my-2 my-md-0 me-md-3">
+      <a class="p-2 text-dark" href="#"><%= link_to 'ホーム', root_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'みんなのとうこう', wants_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'プロフィール', user_path(current_user) %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'ログアウト', logout_path, method: :delete %></a>
+    </nav>
+  </div>
+  </header>
+
+<div id="section5" class="container">
+   <h1 class="text-center">みんなのとうこう</h1>
+
+   <div class="container mt-5 mx-5 card"> 
+<% if @wants.any? %>
+  <ul class="list-unstyled">
+    <% @wants.each do |want| %>
+      <li class="mb-3 d-flex">
+        <img class="rounded me-2" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
+        <p><%= link_to 'View profile', user_path(user), class: "text-decoration-none" %></p>
+        <div>
+          <div>
+            <%= user.name %>
+          </div>
+          <div>
+            <p><%= @prefecture.name %></p>
+            <p><%= @want.content %></p>
+          </div>
+        </div>
+        <li><a href=""><%= render 'favorites/favorite_button', want: want %></a></li>
+        <li><%= @count_likes %></li>
+      </li>
+    <% end %>
+  </ul>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>
+</div>
+</div> 
+
+
+
+<div class="container">
+  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+</div>
+
+<footer>
+  <div id="footer-left">
+    <ul id="footerul">
+     <li><a class="p-2 text-dark" href="#"><%= link_to 'ホーム', root_path %></a></li>
+     <li><a class="p-2 text-dark" href="#"><%= link_to 'みんなのとうこう', wants_path %></a></li>
+     <li><a class="p-2 text-dark" href="#"><%= link_to 'プロフィール', user_path(current_user) %></a></li>
+     <li><a class="p-2 text-dark" href="#"><%= link_to 'ログアウト', logout_path, method: :delete %></a></li>
+    </ul>
+  </div>
+
+  <div id="footer-right">
+     <img src="assets/logo.png" alt="">
+  </div>
+
+</footer>

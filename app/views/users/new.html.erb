@@ -1,0 +1,40 @@
+<div class="main mt-5">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h2 class="logo-img mx-auto"></h2>
+        <p class="text-secondary h3 mb-3">Let's know about Japan</p>
+      </div>
+      <%= form_with(model: @user) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="form-group mt-5 mx-5">
+          <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-2 mx-5">
+          <%= f.text_field :name, autofocus: true, placeholder: "フルネーム", class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-2 mx-5">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
+        </div>
+
+        <div class="form-group mt-2 mx-5">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認", class: "form-control" %>
+        </div>
+
+        <div class="actions mx-5 mt-2">
+          <%= f.submit "登録する", class: "btn btn-primary w-100" %>
+        </div>
+      <% end %>
+
+      <br>
+
+      <p class="devise-link mx-5">
+        アカウントをお持ちですか？
+        <%= link_to "サインインする", login_path %> 
+      </p>
+    </div>
+  </div>
+</div>

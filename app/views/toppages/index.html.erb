@@ -131,12 +131,13 @@
     <img src="assets/logo.png" alt="">
     <p class="h5 my-0 me-md-auto fw-normal">Let's know about Japan</p>
 
+ <% if logged_in? %>
     <div class="jumbotron"> 
     <nav class="my-2 my-md-0 me-md-3">
-      <a class="p-2 text-dark" href="#">ホーム</a>
-      <a class="p-2 text-dark" href="#">みんなのとうこう</a>
-      <a class="p-2 text-dark" href="#">プロフィール</a>
-      <a class="p-2 text-dark" href="#">ログアウト</a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'ホーム', root_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'みんなのとうこう', wants_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'プロフィール', user_path(current_user) %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'ログアウト', logout_path, method: :delete %></a>
     </nav>
   </div>
   </header>
@@ -147,9 +148,10 @@
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light" id="text1">日本について知ろう！</h1>
         
-        <button id="btn1">ログイン</button>
-        <button id="btn2">サインイン</button>
-
+         <% else %>
+        <button id="btn1"><%= link_to 'ログイン', login_path %></button>
+        <button id="btn2"><%= link_to 'サインイン', signup_path %></button>
+        <% end %>
           <!-- <a href="#" class="btn btn-primary my-2" id="a1">ログイン</a>
           <a href="#" class="btn btn-secondary my-2" id="a2">サインアップ</a> -->
         </p>

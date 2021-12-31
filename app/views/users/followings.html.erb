@@ -1,0 +1,69 @@
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" id="header4">
+    <img src="assets/logo.png" alt="">
+    <p class="h5 my-0 me-md-auto fw-normal">Let's know about Japan</p>
+
+    <div class="jumbotron"> 
+    <nav class="my-2 my-md-0 me-md-3">
+      <a class="p-2 text-dark" href="#"><%= link_to 'ホーム', root_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'みんなのとうこう', wants_path %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'プロフィール', user_path(current_user) %></a>
+      <a class="p-2 text-dark" href="#"><%= link_to 'ログアウト', logout_path, method: :delete %></a>
+    </nav>
+  </div>
+  </header>
+
+  <section id="section6">
+    <h1 class="text-center">みんなのとうこう</h1>
+
+<div class="row mt-5">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body">
+        <img class="rounded img-fluid rounded-circle" id="bg-icon" src="<%= gravatar_url(@user, { size: 300 }) %>" alt="">
+      </div>
+      <ul id="section1ul2" class="mx-3">
+            <li><%= @count_followings %></li>
+            <li><a href="<%= followings_user_path(@user) %>">Folloing</a></li>
+            <li><%= @count_followers %></li>
+            <li><a href="<%= followers_user_path(@user) %>">Follwers</a></li>
+             <li><%= @count_likes %></li>
+            <li><a href="<%= likes_user_path(@user) %>">Favorite</a></li>
+          </ul>
+          <a class="mx-5" href="" id="section1a1">Followerのとうこう</a>
+    </div>
+    <%= render 'relationships/follow_button', user: @user %>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge bg-secondary"><%= @count_followings %></span></a></li>
+      <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge bg-secondary"><%= @count_followers %></span></a></li>
+    </ul>
+
+    <%# #↓フォロー表示 %>
+      <!--= render 'users', users: @followings %>
+  </div>
+</div>
+</section>
+
+
+<div class="container">
+  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+</div>
+
+<footer>
+  <div id="footer-left">
+    <ul id="footerul">
+     <li><a href="">ホーム</a></li>
+     <li><a href="">みんなのとうこう</a></li>
+     <li><a href="">プロフィール</a></li>
+     <li><a href="">ログアウト</a></li>
+    </ul>
+  </div>
+
+  <div id="footer-right">
+     <img src="assets/logo.png" alt="">
+  </div>
+</footer>

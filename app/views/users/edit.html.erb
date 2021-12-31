@@ -1,0 +1,25 @@
+<div class="main mt-5 mb-5">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h2 class="logo-img mx-auto"></h2>
+        <p class="text-secondary h3 mb-3">ユーザーの編集ページ</p>
+      </div>
+      <%= form_with(model: @user) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      <div class="form-group mt-2 mx-5">
+        <%= f.label :name, '名前' %>
+        <%= f.text_field :name, autofocus: true, placeholder: "フルネーム", class: "form-control" %>
+      </div>
+      </div>
+        <div class="actions mx-5 mt-4 mb-5">
+          <%= f.submit "登録する", class: "btn btn-primary w-100" %>
+        </div>
+        <div class="btn">
+        <%= link_to '一覧に戻る', users_path %>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>
+</div>
