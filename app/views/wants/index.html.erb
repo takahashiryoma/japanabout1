@@ -19,19 +19,23 @@
 <% if @wants.any? %>
   <ul class="list-unstyled">
     <% @wants.each do |want| %>
-      <li class="mb-3 d-flex">
-        <img class="rounded me-2" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
-        <p><%= link_to 'View profile', user_path(user), class: "text-decoration-none" %></p>
+    <p><%= current_user.name %></p>
+      <li class="mb-5 d-flex">
+         
+        <img class=" me-2" src="<%= gravatar_url(current_user, { size: 50 }) %>" alt="">
+        <p><%= link_to 'View profile', user_path(current_user), class: "text-decoration-none" %></p>
+        
         <div>
+         
           <div>
-            <%= user.name %>
+            
           </div>
           <div>
-            <p><%= @prefecture.name %></p>
-            <p><%= @want.content %></p>
+            <p class="mx-5"><%= want.prefecture.name %></p>
+            <p class="mx-5"><%= want.content %></p>
           </div>
         </div>
-        <li><a href=""><%= render 'favorites/favorite_button', want: want %></a></li>
+        <!--<li>< render 'favorites/favorite_button', user: current_user %></li>-->
         <li><%= @count_likes %></li>
       </li>
     <% end %>
@@ -41,10 +45,8 @@
 </div>
 </div> 
 
-
-
-<div class="container">
-  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+<div class="text-center btn btn-primary" id="a3">
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
 </div>
 
 <footer>

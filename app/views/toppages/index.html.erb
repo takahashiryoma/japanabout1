@@ -1,53 +1,53 @@
 <script type="text/javascript">
       $(function(){
           var areaLinks = {
-                       1:"https://www.pref.hokkaido.lg.jp/",
-                       2:"https://www.pref.aomori.lg.jp/",
-                       3:"https://www.pref.hokkaido.lg.jp/",
-                       4:"https://www.pref.hokkaido.lg.jp/",
-                       5:"https://www.pref.hokkaido.lg.jp/",
-                       6:"https://www.pref.hokkaido.lg.jp/",
-                       7:"https://www.pref.hokkaido.lg.jp/",
-                       8:"https://www.pref.hokkaido.lg.jp/",
-                       9:"https://www.pref.hokkaido.lg.jp/",
-                       10:"https://www.pref.hokkaido.lg.jp/",
-                       11:"https://www.pref.hokkaido.lg.jp/",
-                       12:"https://www.pref.hokkaido.lg.jp/",
-                       13:"https://www.pref.hokkaido.lg.jp/",
-                       14:"https://www.pref.hokkaido.lg.jp/",
-                       15:"https://www.pref.hokkaido.lg.jp/",
-                       16:"https://www.pref.hokkaido.lg.jp/",
-                       17:"https://www.pref.hokkaido.lg.jp/",
-                       18:"https://www.pref.hokkaido.lg.jp/",
-                       19:"https://www.pref.hokkaido.lg.jp/",
-                       20:"https://www.pref.hokkaido.lg.jp/",
-                       21:"https://www.pref.hokkaido.lg.jp/",
-                       22:"https://www.pref.hokkaido.lg.jp/",
-                       23:"https://www.pref.hokkaido.lg.jp/",
-                       24:"https://www.pref.hokkaido.lg.jp/",
-                       25:"https://www.pref.hokkaido.lg.jp/",
-                       26:"https://www.pref.hokkaido.lg.jp/",
-                       27:"https://www.pref.hokkaido.lg.jp/",
-                       28:"https://www.pref.hokkaido.lg.jp/",
-                       29:"https://www.pref.hokkaido.lg.jp/",
-                       30:"https://www.pref.hokkaido.lg.jp/",
-                       31:"https://www.pref.hokkaido.lg.jp/",
-                       32:"https://www.pref.hokkaido.lg.jp/",
-                       33:"https://www.pref.hokkaido.lg.jp/",
-                       34:"https://www.pref.hokkaido.lg.jp/",
-                       35:"https://www.pref.hokkaido.lg.jp/",
-                       36:"https://www.pref.hokkaido.lg.jp/",
-                       37:"https://www.pref.hokkaido.lg.jp/",
-                       38:"https://www.pref.hokkaido.lg.jp/",
-                       39:"https://www.pref.hokkaido.lg.jp/",
-                       40:"https://www.pref.hokkaido.lg.jp/",
-                       41:"https://www.pref.hokkaido.lg.jp/",
-                       42:"https://www.pref.hokkaido.lg.jp/",
-                       43:"https://www.pref.hokkaido.lg.jp/",
-                       44:"https://www.pref.hokkaido.lg.jp/",
-                       45:"https://www.pref.hokkaido.lg.jp/",
-                       46:"https://www.pref.hokkaido.lg.jp/",
-                       47:"https://www.pref.hokkaido.lg.jp/",
+                       1:"prefectures/show/1",
+                       2:"prefectures/show/2",
+                       3:"prefectures/show/3",
+                       4:"prefectures/show/4",
+                       5:"prefectures/show/5",
+                       6:"prefectures/show/6",
+                       7:"prefectures/show/7",
+                       8:"prefectures/show/8",
+                       9:"prefectures/show/9",
+                       10:"prefectures/show/10",
+                       11:"prefectures/show/11",
+                       12:"prefectures/show/12",
+                       13:"prefectures/show/13",
+                       14:"prefectures/show/14",
+                       15:"prefectures/show/15",
+                       16:"prefectures/show/16",
+                       17:"prefectures/show/17",
+                       18:"prefectures/show/18",
+                       19:"prefectures/show/19",
+                       20:"prefectures/show/20",
+                       21:"prefectures/show/21",
+                       22:"prefectures/show/22",
+                       23:"prefectures/show/23",
+                       24:"prefectures/show/24",
+                       25:"prefectures/show/25",
+                       26:"prefectures/show/26",
+                       27:"prefectures/show/27",
+                       28:"prefectures/show/28",
+                       29:"prefectures/show/29",
+                       30:"prefectures/show/30",
+                       31:"prefectures/show/31",
+                       32:"prefectures/show/32",
+                       33:"prefectures/show/33",
+                       34:"prefectures/show/34",
+                       35:"prefectures/show/35",
+                       36:"prefectures/show/36",
+                       37:"prefectures/show/37",
+                       38:"prefectures/show/38",
+                       39:"prefectures/show/39",
+                       40:"prefectures/show/40",
+                       41:"prefectures/show/41",
+                       42:"prefectures/show/42",
+                       43:"prefectures/show/43",
+                       44:"prefectures/show/44",
+                       45:"prefectures/show/45",
+                       46:"prefectures/show/46",
+                       47:"prefectures/show/47",
           };
       
       var d = new jpmap.japanMap(document.getElementById("my-map"), {
@@ -116,6 +116,7 @@
               location.href = areaLinks[data.area.code];
               window.location.href = myUrlPref[data.code - 1];
               window.open(myUrlPref[data.code - 1]);
+              alert(`${data.name}-${data.code}`);
                           }
       });
       
@@ -204,8 +205,8 @@
 </section>
 
 <!-- フェイスブック -->
-<div class="container text-center">
-  <a href="#" class="btn btn-primary" id="a3">Facebook</a>
+<div class="text-center btn btn-primary" id="a3">
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
 </div>
 
 

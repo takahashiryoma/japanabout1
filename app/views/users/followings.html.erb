@@ -40,17 +40,19 @@
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge bg-secondary"><%= @count_followings %></span></a></li>
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge bg-secondary"><%= @count_followers %></span></a></li>
+      
     </ul>
 
     <%# #↓フォロー表示 %>
-      <!--= render 'users', users: @followings %>
+      <%= render 'users', users: @followings %>
+      
   </div>
 </div>
 </section>
 
 
-<div class="container">
-  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+<div class="text-center btn btn-primary" id="a3">
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
 </div>
 
 <footer>

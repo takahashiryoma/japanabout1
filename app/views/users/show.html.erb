@@ -18,8 +18,8 @@
      <div class="container d-flex align-items-center" id="profile1">
        
        <% if current_user %>
-
-        <div id="profile-left">
+       
+        <div id="profile-left" class="container">
           <img class="rounded me-2 rounded-circle" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
            <ul id="section1ul1">
              <li><%= @user.name %></li>
@@ -38,80 +38,54 @@
           <p class="" id="follow_button"><%= render 'relationships/follow_button', user: @user %></p>
         </div>
 
-       <div id="profile-right">
-         <% if @wants.any? %>
-          <% @wants.each do |want| %>
-          <% @prefectures.each do |prefecture| %>
-            <div id="profile-right-right">
-              <ul id="profile-right-rightul1">
-                <li id="profile-right-rightli1"><%= prefecture.name %></li>
-                <% if current_user == want.user %>
-                <li><%= link_to "削除", want, method: :delete, data: { confirm: "You sure?" } %></li>
-                <% end %>
-              </ul>
-              <%= prefecture.image %>
-            </div>
 
-            <div id="profile-right-left">
-              <p><%= want.content %></p>
-              </div>
-               <% end %>
-               <% end %>
+
+
+        <div class="container mt-5 mx-5 card"> 
+         <% if @wants.any? %>
+         <ul class="list-unstyled mx-3 mt-3">
+         <% @wants.each do |want| %>
+           <% if current_user == want.user %>
+             <p><%= link_to '削除', want, method: :delete, data: { confirm: 'You sure?' } %></p>
+             <% end %>
+           <li class="mb-5 d-flex">
+         
+          <!--< image_tag want.prefecture.image, alt: “”, id: “”, class: “”, width: “” %>-->
+          <img src="https://lh5.googleusercontent.com/p/AF1QipNFJ6k1LEn4uuqKoQ-A-UvwjfpiK6ykC1pdDD_f=w408-h305-k-no">
+
+        <div>
+         
+          <div>
+            
           </div>
-           <%== pagy_bootstrap_nav(@pagy) %>
-           <% end %>
-         </div>
+          <div>
+            <p class="mx-5"><%= want.prefecture.name %></p>
+            <p class="mx-5"><%= want.content %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>
+</div>
+</div> 
+
       </div>
      </div>
   </section>
 
-
-  <button id="btn3" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">ついかする</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  
-  <%= form_with(model: @want, local: true) do |f| %>
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">いきたいところ・したいこと</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <form enctype="multipart/form-data" action="/areas" accept-charset="UTF-8" data-remote="true" method="post"><input type="hidden" name="authenticity_token" value="w1N3p1TrssWZRYiW+iVSZm2nFS/r/9xccMCM5ZFYrbpFhuyvptkOlrdHaHh/YxogTqWG0ra4K/zgO8FULd61kw==" />
-            <div class="validate-area"></div>
-            <div class="form-group">
-              <%= f.label :area_country_id, '都道府県' %>
-              <%= f.select :area_country_id, {'北海道': 337, '東京': 231, '愛知': 850, '大阪': 1, '京都': 886, '福岡': 670, '長崎': 240}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
-            </div>
-        
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">したい事:</label>
-            <%= f.text_area :content, class: 'form-control', rows: 3 %>
-          </div>
-          <div class="field">
-            <%= f.file_field :image %>
-            <%= f.submit 'アップロードする'%>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">とじる</button>
-        <%= f.submit 'ついかする', class: 'btn btn-primary' %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+  <p id="btn3"><%= link_to 'ついかする', new_want_path, class: 'btn btn-primary' %></p>
 
 <% else %>
   <p>これは他のユーザーです。</p>
 <% end %>
 
-<div class="container">
-  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+
+  <div class="text-center btn btn-primary" id="a3">
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
 </div>
+
 
 <footer>
   <div id="footer-left">

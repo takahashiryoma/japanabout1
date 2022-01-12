@@ -6,29 +6,26 @@ class PrefecturesController < ApplicationController
      @prefecture = current_user.prefectures.build  # form_with 用
     @pagy, @prefectures = pagy(current_user.prefectures.order(id: :desc))
     @pagy, @prefectures = pagy(User.order(id: :desc), items: 25)
+    
   end
 
   def show
-    @user = User.find(params[:id])
-    @want = current_user.wants.build
-    @pagy, @wants = pagy(current_user.wants.order(id: :desc), item: 25)
-    @prefecture = current_user.prefecture.build
-    @pagy, @prefectures = pagy(current_user.prefectures.order(id: :desc), item: 25)
+    @id = params[:id]
   end
-
+  
   def new
+   @prefecture = Prefecture.new
   end
 
   def create
-    @prefecture = current_user.prefectures.build(prefecture_params)
-    if @want.save
+    @prefecture = Prefecture.new(prefecture_params)
+    if @prefecture.save
       flash[:success] = 'メッセージを投稿しました。'
-      redirect_to user_path
+      redirect_to current_user
     else
       @pagy, @prefectures = pagy(current_user.prefectures.order(id: :desc))
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      redirect_to root_url
-    end
+      render :new
     end
   end
 
@@ -49,4 +46,5 @@ class PrefecturesController < ApplicationController
     unless @prefecture
       redirect_to root_url
     end
+end
 end

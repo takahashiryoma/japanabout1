@@ -23,8 +23,11 @@ Rails.application.routes.draw do
     end
   end
   
+ 
   resources :wants
   resources :prefectures
   resources :relationships, only: [:create, :destroy] 
   resources :favorites
+  
+  get 'prefectures/show/:id' => 'prefectures#show'
   end

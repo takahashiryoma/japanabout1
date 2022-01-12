@@ -1,0 +1,274 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+    text-decoration: none;
+}
+
+a {
+  color: #000; 
+  text-decoration: none; 
+}
+
+
+#header1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+    height: auto;  
+}
+
+header img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  #section1 {
+    margin-top: 100px;
+  }
+
+  #section1h1 {
+    margin-top: 120px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#profile1 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-left: 150px;
+}
+
+#profile-left {
+    width: 40%;
+    margin-left: 100px;
+    
+}
+
+#section1ul1 {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#section1ul1 li {
+    margin-right: 30px;
+}
+
+#section1p1 {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#section1ul2 {
+    display: flex;
+    margin-left: -25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#section1ul2 li {
+    margin-right: 3px;
+}
+
+#section1a1 {
+    margin-left: 10px;
+}
+
+#profile-right {
+    width: 60%;
+}
+
+
+#profile-right {
+  display: flex;
+  margin-left: 100px;
+  margin-top: -150px;
+}
+
+#following h4 {
+  margin-left: 50px;
+}
+
+#following ul {
+  display: flex;
+  margin-top: 50px;
+}
+
+#followingli1 {
+  margin-right: 40px;
+}
+
+#followingli2 {
+  margin-top: 65px;
+}
+
+#following {
+  margin-right: 150px;
+}
+
+#followers a{
+  margin-top: 100px;
+}
+
+
+#a3 {
+  padding: 0 30px;
+  margin-left: 550px;
+  margin-bottom: 300px;
+  margin-top: 300px;
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  background-color: rgb(114 137 218);
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+  background-color: darkgray;
+}
+
+#footer-left {
+  margin-left: 150px;
+}
+
+#footerul {
+  margin-top: 50px;
+}
+
+#footerul li {
+    margin-bottom: 30px;
+}
+
+#footer li a {
+    color: black;
+    opacity: 1;
+}
+
+#footer-right {
+    margin-top: 90px;
+    margin-right: 60px;
+}
+
+#footer-right img {
+    width: 80px;
+    height: 80px;
+}

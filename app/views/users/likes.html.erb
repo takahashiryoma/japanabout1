@@ -42,15 +42,15 @@
     </ul>
     </ul>
 
-    <%# #↓ %>
-      <%# <%= render 'wants/wants', wants: @favorites %>  
+    <%# #↓ %>　
+      <%= render 'users', users: @favorites %>  
   </div>
 </div>
 </section>
 
 
-<div class="container">
-  <a class="btn btn-primary" href="" id="a3">Facebook</a>
+<div class="text-center btn btn-primary" id="a3">
+  <%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
 </div>
 
 <footer>

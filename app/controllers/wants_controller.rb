@@ -17,20 +17,23 @@ class WantsController < ApplicationController
   end
 
   def new
+   @prefecture = Prefecture.new
+   @prefecture.wants.build
+   @want = Want.new
   end
 
   def create
     @want = current_user.wants.build(want_params)
+    # @prefecture = current_user.prefectures.build(prefecture_params[:prefecture_id])
     if @want.save
       flash[:success] = 'メッセージを投稿しました。'
-      redirect_to user_path
+      redirect_to current_user
     else
-      @pagy, @wants = pagy(current_user.wants.order(id: :desc))
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      redirect_to root_url
-    end
+      render :new
     end
   end
+  
 
   def destroy
     @want.destroy
@@ -41,12 +44,17 @@ class WantsController < ApplicationController
   private
 
   def want_params
-    params.require(:want).permit(:content,:image)
+    params.require(:want).permit(:content,:prefecture_id)
   end
+  
+  # def prefecture_params
+  #   params.require(:want).permit(prefecture_id:[:name,:image])
+  # end
 
   def correct_user
     @want = current_user.wants.find_by(id: params[:id])
     unless @want
       redirect_to root_url
     end
+end
 end
