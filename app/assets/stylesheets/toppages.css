@@ -102,6 +102,7 @@ input, select {
 
 body {
   
+
  }
 
 header img {
@@ -115,6 +116,44 @@ header img {
 #jumbotrona1 a{
   color: #000;
   background-color: #000;
+}
+
+/*#header1 {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*    width: 100%;*/
+/*    padding: 0;*/
+/*    z-index: 10000;*/
+/*    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);*/
+/*    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);*/
+/*    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);*/
+/*    transition: all 0.2s ease-in-out;*/
+/*    height: auto;  */
+/*}*/
+
+/*.topHeader{*/
+/*  background-color:red !important;*/
+/*  border-color:red !important;*/
+/*}*/
+/* header */
+
+/* #a1 {
+  display: block;
+  padding: 10px;
+  margin: 30px 160px;
+  
+}
+#a2 {
+  display: block;
+  padding: 10px;
+  margin: 10px 160px;
+} */
+
+header img {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
 }
 
 #header1 {
@@ -136,12 +175,14 @@ header img {
   border-color:red !important;
 }
 
- #section1 {
- background-image: url(assets/fuji.png);
+#section1 {
+ background: url(fuji.png);
  background-size: cover;
  width: 100%;
- height: 650px;
-} 
+ height: 600px;
+ 
+  
+}
 
 #text1 {
   margin-top: 80px;
@@ -153,19 +194,6 @@ header img {
   color: #FFF;
   text-shadow: 0 0 0.2em rgba(0,0,0,1);
 }
-
-/* #a1 {
-  display: block;
-  padding: 10px;
-  margin: 30px 160px;
-  
-}
-#a2 {
-  display: block;
-  padding: 10px;
-  margin: 10px 160px;
-} */
-
 
 
 #section2 {
@@ -298,3 +326,7 @@ li {
   margin-left: 200px;
   margin-bottom: 200px;
 }
+
+
+
+
